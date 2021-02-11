@@ -135,7 +135,7 @@ function js_libs(){
         'node_modules/jquery/dist/jquery.min.js',
         // 'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
         'node_modules/sticky-js/dist/sticky.min.js',
-        'node_modules/slick-carousel/slick/slick.js'
+        'node_modules/slick-carousel/slick/slick.min.js'
         // 'node_modules/wow.js/dist/wow.js'
       ])
         // .pipe(uglify())
@@ -157,7 +157,7 @@ function images(){
                 progressive:true,
                 svgoPlugins:[{removeViewBox: false}],
                 interlaced:true,
-                optimizationLevel: 3 //1 - 7
+                optimizationLevel: 6 //1 - 7
             })
         )
         .pipe(dest(path.build.img))
