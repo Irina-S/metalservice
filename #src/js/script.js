@@ -7,6 +7,19 @@ $(document).ready(function(){
         autoplaySpeed:3000
     });
 
+    // ITEM SLIDER
+    $('#item-slider').slick({
+      slidesToShow:4,
+      slidesPerRow:1,
+      slidesToScroll:1,
+      arrows:true,
+      nextArrow:'<button class="slick-next slick-arrow" aria-label="Previous" type="button" style=""><img src="img/font-icons/down-arrow-blue.svg" alt=""></button>',
+      prevArrow:'<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style=""><img src="img/font-icons/up-arrow-blue.svg" alt=""></button>',
+      dots:false,
+      autoplay:false,
+      vertical:true
+  });
+
     // ОТКРЫТИЕ И ЗАКРЫТИЕ МЕНЮ, КАТАЛОГА
   const mobileCatalog = $('.aside');
   const mobileMenu = $('.main-nav');

@@ -28,6 +28,10 @@
             }
         }
     }
+
+    .item{
+        width: calc(100% / 4);
+    }
 }
 
 
@@ -124,6 +128,12 @@
 
 }
 
+@media (max-width:1450px){
+    .item{
+        width: calc(100% / 3);
+    }
+}
+
 @media (max-width:1380px){
     .cat{
         flex-basis: calc(100% / 4 - 14px);
@@ -175,6 +185,11 @@
 }
 
 @media (max-width:1199px){
+
+    .close-btn{
+        display: block;
+    }
+
     .aside{
         left:-100%;
 
@@ -236,7 +251,7 @@
         width: 280px;
         height: 100vh;
         background-color: #fff;
-        z-index: 10;
+        z-index: 15;
         padding-top: 30px;
         flex-direction: column;
 
@@ -263,16 +278,6 @@
     }
 
     .phone-block{
-        // width: 40px;
-        // height: 40px;
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
-        
-        // &__inner{
-        //     display: none;
-        // }
-
         justify-content: center;
 
         span{
@@ -325,16 +330,23 @@
         }
     }
 
+    .maps{
+        padding-top: 30px;
+    }
+
     #map-1, #map-2 {
         max-height: 600px;
         height: 600px;
     }
 
+
     .footer{
         &-section{
-            flex-basis: 50% !important;
             &:first-child{
                 display: none;
+            }
+            &:nth-child(2), &:last-child{
+                flex-basis: 50%;
             }
         }
 
@@ -347,6 +359,10 @@
             padding-bottom: 5px;
         }
     }
+
+    // .item{
+    //     width: calc(100% / 4);
+    // }
 }
 
 @media (max-width:1100px){
@@ -355,7 +371,7 @@
     }
 }
 
-@media (max-width:860px){
+@media (max-width:880px){
     .cat{
         flex-basis: calc(100% / 2 - 14px);
 
@@ -367,6 +383,19 @@
     .about{
         &__text{
             margin-top: -12px;
+        }
+    }
+
+    .item{
+        width: calc(100% / 2);
+    }
+
+    .filter{
+        flex-direction: column;
+
+        &__title{
+            margin-right: 20px;
+            margin-bottom: 15px;
         }
     }
 }
@@ -407,11 +436,15 @@
 
     .map{
         &-title{
-            margin-top: 0;
+            margin-top: 40px;
 
             strong{
                 display: inline;
             }
+        }
+
+        &-cont{
+            margin-top: 15px;
         }
     }
 
@@ -465,6 +498,30 @@
             }
         }
     }
+
+    .contacts-block{
+        width: 100%;
+        position: static;
+        margin-top: 20px;
+    }
+
+    .footer{
+        &__bottom{
+            height: auto;
+            padding: 25px;
+            flex-direction: column;
+        }
+    }
+
+    .copyright{
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width:630px){
+    .item{
+        width: calc(100%);
+    }
 }
 
 @media (max-width:575px){
@@ -484,6 +541,10 @@
         margin-right:10px;
         margin-left: auto;
         font-size: 22px;
+
+        &:hover{
+            cursor: pointer;
+        }
     }
 
     .search-block{
@@ -511,7 +572,7 @@
 
         &__btn{
             right:unset;
-            left:0;
+            left: 8px;
 
             i{
                 font-size: 20px;
@@ -536,6 +597,14 @@
         }
     }
 
+    .adv{
+        &__icon{
+            flex-basis:65px;
+            flex-grow:0;
+            width: 65px;
+        }
+    }
+
     .cat{
         flex-basis: calc(100% - 14px);
         background-position: left 0px top 100px;
@@ -544,6 +613,52 @@
             // right: 56%;
             top: 123px;
         }
+    }
+
+    #map-1, #map-2{
+        max-height: 600px;
+        height: 450px;
+    }
+
+    .footer{
+        &__top{
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+        
+        &-section{
+            &:last-child{
+                flex-basis: 100%;
+                *{
+                    text-align: center;
+                }
+            }
+
+            &:nth-child(2){
+                display: none;
+            }
+        }
+    }
+
+    .page-title{
+        padding-left:20px;
+        padding-right: 20px;
+    }
+
+    .breadcrumbs{
+        padding-left:20px;
+        padding-right: 20px;
+    }
+
+    .filters{
+        padding-left:20px;
+        padding-right: 20px;
+    }
+
+    .catalog{
+        margin-left:20px;
+        margin-right: 20px;
+        width: calc(100% - 40px);
     }
 }
 
@@ -565,6 +680,36 @@
 
         &__info{
             margin-left: 20px;
+        }
+    }
+
+    .adv2{
+        &-list{
+            &__item{
+                span{
+                    margin-left: 12px;
+                }
+            }
+        }
+    }
+
+    .item{
+        &__info{
+            flex-direction: column;
+
+            &-block{
+                width: 100%;
+                flex-basis: auto;
+            }
+        }
+
+        &__buy{
+            flex-direction: column;
+        }
+
+        &__price-block{
+            align-items: center;
+            margin-bottom: 15px;
         }
     }
 }
