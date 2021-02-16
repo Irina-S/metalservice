@@ -163,64 +163,87 @@
                     </div>
 
                     <div class="cart">
-                        <table>
-                            <tr>
-                                <th>Наименование</th>
-                                <th>Цена</th>
-                                <th>Количество</th>
-                                <th>Стоимость</th>
-                                <th></th>
-                            </tr>
-                            <tr clas="cart-item">
-                                <td>
-                                    <div class="cart-item-cell">
-                                        <div class="cart-item__img">
-                                            <img src="img/items/1.png" alt="">
-                                        </div>
-                                        <div class="cart-item__info">
-                                            <div class="cart-item__name">Лист холоднокатаный</div>
-                                            <div class="cart-item__params">
-                                                <div class="cart-item-param">
-                                                    <div class="cart-item-param__title">Размер: </div>
-                                                    <div class="cart-item-param__value">1 250*2 500*8</div>
-                                                </div>
+                        <form action="">
+                            <table>
+                                <tr>
+                                    <th>Наименование</th>
+                                    <th>Цена</th>
+                                    <th>Количество</th>
+                                    <th>Стоимость</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="cart-item-cell">
+                                            <div class="cart-item__img">
+                                                <img src="img/items/1.png" alt="">
+                                            </div>
+                                            <div class="cart-item__info">
+                                                <div class="cart-item__name">Лист холоднокатаный</div>
+                                                <div class="cart-item__params">
+                                                    <div class="cart-item-param">
+                                                        <div class="cart-item-param__title">Размер: </div>
+                                                        <div class="cart-item-param__value">1 250*2 500*8</div>
+                                                    </div>
 
-                                                <div class="cart-item-param">
-                                                    <div class="cart-item-param__title">Марка: </div>
-                                                    <div class="cart-item-param__value">0,8 ст 08пс-6</div>
+                                                    <div class="cart-item-param">
+                                                        <div class="cart-item-param__title">Марка: </div>
+                                                        <div class="cart-item-param__value">0,8 ст 08пс-6</div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    
-                                </td>
-                                <td>
-                                    <div class="cart-item-cell">
-                                        <div class="cart-item__price">2 530 руб.</div>
-                                        <div class="cart-item__price-hint">Цена за 1 шт.</div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart-item-cell">
-                                        <div class="cart-item__count">
-                                            <button class="shk-count__button dec " type="button">-</button>
-                                            <input type="text" name="count[]" value="1" class="shk-count" style="display: inline-block;">
-                                            <button class="shk-count__button inc" type="button">+</button>
+                                        
+                                    </td>
+                                    <td>
+                                        <div class="cart-item-cell">
+                                            <div class="cart-item__price">
+                                                <span>2 530 руб.</span>   
+                                                <small>Цена за 1 шт.</small>   
+                                            </div>
+                                            <div class="cart-item__price-hint"></div>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart-item-cell">
-                                        <div class="cart-item__total-cost">2 530 руб.</div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="cart-item-cell">
-                                        <button class="cart-item__del-btn"><img src="img/font-icons/cross.svg" alt=""></button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
+                                    </td>
+                                    <td>
+                                        <div class="cart-item-cell">
+                                            <div class="cart-item__count">
+                                                <button class="shk-count__button dec " type="button">-</button>
+                                                <input type="text" name="count[]" value="1" class="shk-count" style="display: inline-block;">
+                                                <button class="shk-count__button inc" type="button">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="cart-item-cell">
+                                            <div class="cart-item__total-cost">2 530 руб.</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="cart-item-cell">
+                                            <button class="cart-item__del-btn"><img src="img/font-icons/cross.svg" alt=""></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div class="cart-footer">
+                                <div class="promo">
+                                    <input type="text">
+                                    <button>
+                                        <img src="img/font-icons/arrow-right-blue.svg" alt="">
+                                    </button>
+                                </div>
+
+                                <div class="final-cost">
+                                    <span>Итого:</span>
+                                    <STRONG>22 120 р</STRONG>
+                                </div>
+                                <button class="btn btn_blue">Оформить заказ <img src="img/font-icons/arrow-right.svg" alt=""></button>
+                            </div>
+                        </form>
+                        
+
+                        
                     </div>
                 </div>     
                 

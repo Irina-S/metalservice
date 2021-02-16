@@ -1591,6 +1591,7 @@ overflow-y: hidden;
     width:calc(100% - 100px);
     margin-left: 50px;
     margin-right: 50px;
+    // margin-bottom: 60px;
 
     &-count{
         &__text{
@@ -1639,21 +1640,22 @@ overflow-y: hidden;
         width: 100%;
         border: none;
         border-collapse: collapse;
+        margin-bottom: 60px;
 
         tr{
-            :first-child{
+            >:first-child{
                 width: 36%;
             }
 
-            :nth-child(2){
+            >:nth-child(2){
                 width: 18%;
             }
 
-            :nth-child(3){
+            >:nth-child(3){
                 width: 21%;
             }
             
-            :nth-child(3){
+            >:nth-child(3){
                 width: 17%;
             }
         }
@@ -1668,110 +1670,164 @@ overflow-y: hidden;
             line-height: 18px;
             font-feature-settings: 'pnum' on, 'lnum' on;
             color: #2E4363;
+            text-align: left;
+            padding-left: 30px;
         }
 
         td{
-
+            >div {
+                margin: 30px 0;
+                border-left:1px solid #EFEFEF;
+                min-height: calc(100% - 60px);
+                display: flex;
+                
+                &:not(:last-child){
+                    border-right: 1px solid #EFEFEF;
+                }
         }
 
         
-    }
+        }
     
-    &-item{
-        &-cell{
-            margin: 30px 0;
-            border-left:1px solid #EFEFEF;
-            min-height: calc(100% - 60px);
-            
-            &:not(:last-child){
-                border-right: 1px solid #EFEFEF;
-            }
+
+        
+    }
+
+    &-footer{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 48px 50px;
+    }
+}
+
+.cart-item{
+    &__img{
+        height:70px;
+
+        img{
+            max-height:100%;
+        }
+    }
+
+    &__info{
+        margin-left: 20px;
+    }
+
+    &__name{
+        font-family: Akrobat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 83%;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #141622;
+        margin-bottom: 14px;
+    }
+
+    &-param{
+        display: flex;
+        justify-content: space-between;
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 12px;
+        line-height: 150%;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #686B80;
+
+        &__title{
+
         }
 
-        &__img{
-            height:70px;
-
-            img{
-                max-height:100%;
-            }
+        &__value{
+            color:#7D8093;
         }
+    }
 
-        &__info{
-            margin-left: 20px;
-        }
+    &__price{
+        font-family: Akrobat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 83%;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #141622;
+        display: flex;
+        flex-direction: column;
 
-        &__name{
-            font-family: Akrobat;
-            font-style: normal;
-            font-weight: 800;
-            font-size: 24px;
-            line-height: 83%;
-            font-feature-settings: 'pnum' on, 'lnum' on;
-            color: #141622;
-        }
-
-        &-param{
-            display: flex;
-            justify-content: space-between;
+        small{
             font-family: Roboto;
             font-style: normal;
             font-weight: 300;
             font-size: 12px;
             line-height: 150%;
-            font-feature-settings: 'pnum' on, 'lnum' on;
             color: #686B80;
-
-            &__title{
-
-            }
-
-            &__value{
-                
-            }
         }
+    }
 
-        &__price{
-            font-family: Akrobat;
-            font-style: normal;
-            font-weight: 800;
-            font-size: 24px;
-            line-height: 83%;
-            font-feature-settings: 'pnum' on, 'lnum' on;
-            color: #141622;
-            &-hint{
-                font-family: Roboto;
-                font-style: normal;
-                font-weight: 300;
-                font-size: 12px;
-                line-height: 150%;
-                color: #686B80;
-            }
-        }
+    &__count{
+        position: relative;
+    }
 
-        &__count{
-            position: relative;
-        }
+    &__total-cost{
+        font-family: Akrobat;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 24px;
+        line-height: 83%;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #141622;
+    }
 
-        &__total-cost{
-            font-family: Akrobat;
-            font-style: normal;
-            font-weight: 800;
-            font-size: 24px;
-            line-height: 83%;
-            font-feature-settings: 'pnum' on, 'lnum' on;
-            color: #141622;
-        }
+    &__del-btn{
+        border:none;
+        outline: none;
+        width: 30px;
+        height: 30px;
+        background: none;
 
-        &__del-btn{
-            border:none;
-            outline: none;
-            width: 30px;
-            height: 30px;
-            background: none;
-
-            img{
-                width: 100%;
-            }
+        img{
+            width: 100%;
         }
     }
 }
+
+.promo{
+    width: 400px;
+    height: 55px;
+    display: flex;
+    border:1px solid #A7B1C0;
+
+    button{
+        width: 57px;
+        height: 100%;
+        border: none;
+        border-left:1px solid #A7B1C0;
+        background: none;
+        outline: none;
+        &:hover{
+            cursor:pointer;
+        }
+    }
+
+    input{
+        height: 100%;
+        width:calc(100% - 57px);
+        border: none;
+    }
+}
+
+.final-cost{
+    font-family: Akrobat;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 56%;
+    text-align: right;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #2E4363;
+}
+
+@import "_about.scss";
+@import "_order.scss";
