@@ -13,12 +13,59 @@ $(document).ready(function(){
       slidesPerRow:1,
       slidesToScroll:1,
       arrows:true,
-      nextArrow:'<button class="slick-next slick-arrow" aria-label="Previous" type="button" style=""><img src="img/font-icons/down-arrow-blue.svg" alt=""></button>',
-      prevArrow:'<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style=""><img src="img/font-icons/up-arrow-blue.svg" alt=""></button>',
+      nextArrow:'<button class="slick-next slick-arrow" type="button" style=""><img src="img/font-icons/down-arrow-blue.svg" alt=""></button>',
+      prevArrow:'<button class="slick-prev slick-arrow" type="button" style=""><img src="img/font-icons/up-arrow-blue.svg" alt=""></button>',
       dots:false,
       autoplay:false,
       vertical:true
-  });
+    });
+
+    $('.catalog-slider').slick({
+      slidesToShow:5,
+      slidesToScroll:1,
+      arrows:true,
+      dots:false,
+      autoplay:false,
+      appendArrows:$('.catalog-slider-nav'),
+      nextArrow:'<button class="slick-next slick-arrow" type="button" style=""><img src="img/font-icons/arrow-right.svg" alt=""></button>',
+      prevArrow:'<button class="slick-prev slick-arrow" type="button" style=""><img src="img/font-icons/arrow-left.svg" alt=""></button>',
+      responsive:[
+        {
+          breakpoint: 1800,
+          settings: {
+            slidesToShow: 4,
+          }
+        },
+        {
+          breakpoint: 1450,
+          settings: {
+            slidesToShow: 3,
+          }
+        },
+        {
+          breakpoint: 880,
+          settings: {
+            slidesToShow: 2,
+          }
+        },
+        {
+          breakpoint: 630,
+          settings: {
+            slidesToShow: 1,
+          }
+        }
+      ]
+    });
+
+    // ТАБЫ В КАРТОЧКЕ ТОВАРА
+    $('.tab').on('click', function(){
+      const contentId = $(this).data('contentId');
+      console.log(contentId);
+      $('.tab').removeClass('active')
+      $('.tab-content').removeClass('active');
+      $(this).addClass('active');
+      $(`${contentId}`).addClass('active');
+    })
 
     // ОТКРЫТИЕ И ЗАКРЫТИЕ МЕНЮ, КАТАЛОГА
   const mobileCatalog = $('.aside');

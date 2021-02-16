@@ -134,7 +134,7 @@
                             <div class="mobile-search-btn"><i class="icon-search"></i></div>
 
                             <div class="cart-block">
-                                <a href="/">
+                                <a href="cart.html">
                                     <i class="icon-cart"></i>
                                     <span class="cart__text">Корзина: </span>
                                     <span class="cart__value"><span>1</span><span> товар на 3 460 руб.</span></span>   
@@ -162,10 +162,10 @@
                                     <img src="img/items/1.png" alt="">
                                 </div>
                                 <div class="item-card__photo">
-                                    <img src="img/items/1.png" alt="">
+                                    <img src="img/items/1-big.png" alt="">
                                 </div>
                             </div>
-                            <div class="item-card__params">
+                            <div class="item-card__params item-params">
                                 <h3 class="item-params__title">Краткие характеристики:</h3>
                                 <table class="item-params-table">
                                     <tr>
@@ -195,34 +195,36 @@
                             </div>
                             <div class="item-card__info item-info">
                                 <div class="item-info__top">
-                                    <div class="item__presense"><img src="img/font-icons/tick-green.svg" alt="" srcset=""> В наличии (54 штук)</div>
+                                    <div class="item__presence"><img src="img/font-icons/tick-green.svg" alt="" srcset=""> В наличии (54 штук)</div>
                                     <div class="item__art">Артикул: ПГ01-15</div>
                                 </div>
 
-                                <div class="item-info__mid">
-                                    <div class="item__price-block">
-                                        <div class="item__price">2 530 руб.</div>
-                                        <div class="item__old-price">
-                                            <span>3 100 руб.</span>
-                                            <span class="stroke"></span>
+                                <div class="item-info__wrapper">
+                                    <div class="item-info__mid">
+                                        <div class="item__price-block">
+                                            <div class="item__old-price">
+                                                <span>3 100 руб.</span>
+                                                <span class="stroke"></span>
+                                            </div>
+                                            <div class="item__price">2 530 руб.</div>
+                                        </div>
+                                        <div class="item__discount">
+                                            <span>Скидка 17%</span>
+                                            <span>685 ₽</span>
                                         </div>
                                     </div>
-                                    <div class="item__discount">
-                                        <span>Скидка 17%</span>
-                                        <span>685 ₽</span>
+
+                                    <div class="item-info__bottom">
+                                        <form class="item-form">
+                                            <div class="item__count">
+                                                <button class="shk-count__button dec " type="button">-</button>
+                                                <input type="text" name="count[]" value="1" class="shk-count" style="display: inline-block;">
+                                                <button class="shk-count__button inc" type="button">+</button>
+                                            </div>
+
+                                            <div class="btn btn_blue item-form__btn"><i class="icon-cart"></i> Добавить в корзину</div>
+                                        </form>
                                     </div>
-                                </div>
-
-                                <div class="item-info__bottom">
-                                    <form class="item-form">
-                                        <div class="item__count">
-                                            <button class="shk-count__button dec " type="button">-</button>
-                                            <input type="text" name="count[]" value="1" class="shk-count" style="display: inline-block;">
-                                            <button class="shk-count__button inc" type="button">+</button>
-                                        </div>
-
-                                        <div class="btn btn_blue item-form__btn"><i class="icon-cart"></i> Добавить в корзину</div>
-                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -231,36 +233,313 @@
                     <div class="details">
                         <div class="details-tabs">
                             <div class="tabs">
-                                <div class="tab">Описание товара</div>
-                                <div class="tab">Характеристики</div>
-                                <div class="tab">Доставка и оплата</div>
+                                <div class="tab active" data-content-id="#desc">Описание товара</div>
+                                <div class="tab" data-content-id="#params">Характеристики</div>
+                                <div class="tab" data-content-id="#delivery">Доставка и оплата</div>
                             </div>
                             <div class="tabs-content">
-                                <div class="tab-content">
+                                <div class="tab-content active" id="desc">
                                     <p>
                                         Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt.
                                     </p>
 
                                     <h3>At vero eos et accusamus et iusto odio</h3>
                                 
+                                    <ul>
+                                        <li>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</li>
+                                        <li>Рerspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</li>
+                                        <li>Omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quaeillo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="tab-content" id="params">
                                     <p>
-                                        <ul>
-                                            <li>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</li>
-                                            <li>Рerspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</li>
-                                            <li>Omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quaeillo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</li>
-                                        </ul>
+                                        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt.
                                     </p>
+
+                                    <h3>At vero eos et accusamus et iusto odio</h3>
+                                
+                                    <ul>
+                                        <li>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</li>
+                                        <li>Рerspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</li>
+                                        <li>Omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quaeillo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="tab-content" id="delivery">
+                                    <p>
+                                        Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt.
+                                    </p>
+
+                                    <h3>At vero eos et accusamus et iusto odio</h3>
+                                
+                                    <ul>
+                                        <li>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</li>
+                                        <li>Рerspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</li>
+                                        <li>Omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quaeillo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                         <ul class="details-adv">
                             <div class="details-adv__item">
-                                <div class="details-adv__icon"></div>
-                                
+                                <div class="details-adv__icon">
+                                    <img src="img/details-adv/1.svg" alt="">
+                                </div>
+                                <div class="details-adv__info">
+                                    <div class="details-adv__title">
+                                        Качественный металлопрокат
+                                    </div>
+                                    <div class="details-adv__subtitle">
+                                        эффективно работает на рынке металлов с 2003 года
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="details-adv__item">
+                                <div class="details-adv__icon">
+                                    <img src="img/details-adv/2.svg" alt="">
+                                </div>
+                                <div class="details-adv__info">
+                                    <div class="details-adv__title">
+                                        Гибкое ценообразование
+                                    </div>
+                                    <div class="details-adv__subtitle">
+                                        Скидки и рассрочка в индивидуальном порядке
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="details-adv__item">
+                                <div class="details-adv__icon">
+                                    <img src="img/details-adv/3.svg" alt="">
+                                </div>
+                                <div class="details-adv__info">
+                                    <div class="details-adv__title">
+                                        Доставляем по всему краю
+                                    </div>
+                                    <div class="details-adv__subtitle">
+                                        Собственный автопарк, две базы с ЖД путями
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="details-adv__item">
+                                <div class="details-adv__icon">
+                                    <img src="img/details-adv/4.svg" alt="">
+                                </div>
+                                <div class="details-adv__info">
+                                    <div class="details-adv__title">
+                                        Предоставляем кредит до 300 000 руб.
+                                    </div>
+                                    <div class="details-adv__subtitle">
+                                        При наличии паспорта без залога и поручителей ПОА «Почта банк»
+                                    </div>
+                                </div>
                             </div>
                         </ul>
                     </div>
+
+                    <div class="section-title-block">
+                        <div class="section-title">Похожие товары</div>
+                        <div class="catalog-slider-nav">
+                            
+                        </div>
+                    </div>
                            
+                    <div class="catalog-slider">
+                            <div class="item">
+                                <div class="item__photo">
+                                    <a href="#">
+                                        <img src="img/items/1.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="item__name">Лист холоднокатаный</div>
+                                <div class="item__info">
+                                    <div class="item__info-block">
+                                        <div class="item__info-block-title">Размер:</div>
+                                        <div class="item__info-block-value">1 250*2 500*8</div>
+                                    </div>
+
+                                    <div class="item__info-block">
+                                        <div class="item__info-block-title">Марка:</div>
+                                        <div class="item__info-block-value">0,8 ст 08пс-6</div>
+                                    </div>
+                                </div>
+                                <div class="item__buy">
+                                    <div class="item__price-block">
+                                        <div class="item__price">2 530 руб.</div>
+                                        <div class="item__old-price">
+                                            <span></span>
+                                            <span class="stroke"></span>
+                                        </div>
+                                    </div>
+                                    <form action="" class="item-form">
+                                        <button class="btn btn_blue btn_small item-form__btn"><i class="icon-cart"></i>Купить</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="item__photo">
+                                    <a href="#">
+                                        <img src="img/items/2.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="item__name">Лист холоднокатаный</div>
+                                <div class="item__info">
+                                    <div class="item__info-block">
+                                        <div class="item__info-block-title">Размер:</div>
+                                        <div class="item__info-block-value">1 250*2 500*8</div>
+                                    </div>
+
+                                    <div class="item__info-block">
+                                        <div class="item__info-block-title">Марка:</div>
+                                        <div class="item__info-block-value">0,8 ст 08пс-6</div>
+                                    </div>
+                                </div>
+                                <div class="item__buy">
+                                    <div class="item__price-block">
+                                        <div class="item__price">2 530 руб.</div>
+                                        <div class="item__old-price">
+                                            <span>3 130 руб.</span>
+                                            <span class="stroke"></span>
+                                        </div>
+                                    </div>
+                                    <form action="" class="item-form">
+                                        <button class="btn btn_blue btn_small item-form__btn"><i class="icon-cart"></i>Купить</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="item__photo">
+                                    <a href="#">
+                                        <img src="img/items/3.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="item__name">Лист холоднокатаный</div>
+                                <div class="item__info">
+                                    <div class="item__info-block">
+                                        <div class="item__info-block-title">Размер:</div>
+                                        <div class="item__info-block-value">1 250*2 500*8</div>
+                                    </div>
+
+                                    <div class="item__info-block">
+                                        <div class="item__info-block-title">Марка:</div>
+                                        <div class="item__info-block-value">0,8 ст 08пс-6</div>
+                                    </div>
+                                </div>
+                                <div class="item__buy">
+                                    <div class="item__price-block">
+                                        <div class="item__price">2 530 руб.</div>
+                                        <div class="item__old-price">
+                                            <span></span>
+                                            <span class="stroke"></span>
+                                        </div>
+                                    </div>
+                                    <form action="" class="item-form">
+                                        <button class="btn btn_blue btn_small item-form__btn"><i class="icon-cart"></i>Купить</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="item__photo">
+                                    <a href="#">
+                                        <img src="img/items/4.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="item__name">Лист холоднокатаный</div>
+                                <div class="item__info">
+                                    <div class="item__info-block">
+                                        <div class="item__info-block-title">Размер:</div>
+                                        <div class="item__info-block-value">1 250*2 500*8</div>
+                                    </div>
+
+                                    <div class="item__info-block">
+                                        <div class="item__info-block-title">Марка:</div>
+                                        <div class="item__info-block-value">0,8 ст 08пс-6</div>
+                                    </div>
+                                </div>
+                                <div class="item__buy">
+                                    <div class="item__price-block">
+                                        <div class="item__price">2 530 руб.</div>
+                                        <div class="item__old-price">
+                                            <span></span>
+                                            <span class="stroke"></span>
+                                        </div>
+                                    </div>
+                                    <form action="" class="item-form">
+                                        <button class="btn btn_blue btn_small item-form__btn"><i class="icon-cart"></i>Купить</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="item__photo">
+                                    <a href="#">
+                                        <img src="img/items/5.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="item__name">Лист холоднокатаный</div>
+                                <div class="item__info">
+                                    <div class="item__info-block">
+                                        <div class="item__info-block-title">Размер:</div>
+                                        <div class="item__info-block-value">1 250*2 500*8</div>
+                                    </div>
+
+                                    <div class="item__info-block">
+                                        <div class="item__info-block-title">Марка:</div>
+                                        <div class="item__info-block-value">0,8 ст 08пс-6</div>
+                                    </div>
+                                </div>
+                                <div class="item__buy">
+                                    <div class="item__price-block">
+                                        <div class="item__price">2 530 руб.</div>
+                                        <div class="item__old-price">
+                                            <span></span>
+                                            <span class="stroke"></span>
+                                        </div>
+                                    </div>
+                                    <form action="" class="item-form">
+                                        <button class="btn btn_blue btn_small item-form__btn"><i class="icon-cart"></i>Купить</button>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <div class="item">
+                                <div class="item__photo">
+                                    <a href="#">
+                                        <img src="img/items/5.png" alt="">
+                                    </a>
+                                </div>
+                                <div class="item__name">Лист холоднокатаный</div>
+                                <div class="item__info">
+                                    <div class="item__info-block">
+                                        <div class="item__info-block-title">Размер:</div>
+                                        <div class="item__info-block-value">1 250*2 500*8</div>
+                                    </div>
+
+                                    <div class="item__info-block">
+                                        <div class="item__info-block-title">Марка:</div>
+                                        <div class="item__info-block-value">0,8 ст 08пс-6</div>
+                                    </div>
+                                </div>
+                                <div class="item__buy">
+                                    <div class="item__price-block">
+                                        <div class="item__price">2 530 руб.</div>
+                                        <div class="item__old-price">
+                                            <span></span>
+                                            <span class="stroke"></span>
+                                        </div>
+                                    </div>
+                                    <form action="" class="item-form">
+                                        <button class="btn btn_blue btn_small item-form__btn"><i class="icon-cart"></i>Купить</button>
+                                    </form>
+                                </div>
+                            </div>
+                    </div>  
                 </div>     
                 
                 <footer class="footer">
