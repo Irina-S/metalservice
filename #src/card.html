@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="css/slick.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="css/nice-select.css"> -->
+    <link rel="stylesheet" href="css/nice-select.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="css/style.css?v=1.0.4">
     <link rel="stylesheet" href="css/responsive.css?v=1.0.4">
@@ -149,19 +149,25 @@
                         <li class="breadcrumbs__item">Лист холоднокатанный</li>
                     </ul>
 
-                    <h1 class="page-title">Лист холоднокатанный</h1>
+                    <div class="page-title-block">
+                        <h1 class="page-title">Лист холоднокатанный</h1>
+                    </div>
 
                     <div class="card">
                         <div class="item-card">
                             <div class="item-card__imgs">
-                                <div class="item-slider" id="item-slider">
+                                <div class="item-slider-mini">
                                     <img src="img/items/1.png" alt="">
                                     <img src="img/items/1.png" alt="">
                                     <img src="img/items/1.png" alt="">
                                     <img src="img/items/1.png" alt="">
                                     <img src="img/items/1.png" alt="">
                                 </div>
-                                <div class="item-card__photo">
+                                <div class="item-card__photo item-slider">
+                                    <img src="img/items/1-big.png" alt="">
+                                    <img src="img/items/1-big.png" alt="">
+                                    <img src="img/items/1-big.png" alt="">
+                                    <img src="img/items/1-big.png" alt="">
                                     <img src="img/items/1-big.png" alt="">
                                 </div>
                             </div>
@@ -282,61 +288,61 @@
                             </div>
                         </div>
                         <ul class="details-adv">
-                            <div class="details-adv__item">
-                                <div class="details-adv__icon">
+                            <li class="details-adv__item">
+                                <div>
                                     <img src="img/details-adv/1.svg" alt="">
                                 </div>
-                                <div class="details-adv__info">
-                                    <div class="details-adv__title">
+                                <div>
+                                    <strong>
                                         Качественный металлопрокат
-                                    </div>
-                                    <div class="details-adv__subtitle">
+                                    </strong>
+                                    <span>
                                         эффективно работает на рынке металлов с 2003 года
-                                    </div>
+                                    </span>
                                 </div>
-                            </div>
+                            </li>
 
-                            <div class="details-adv__item">
-                                <div class="details-adv__icon">
+                            <li class="details-adv__item">
+                                <div>
                                     <img src="img/details-adv/2.svg" alt="">
                                 </div>
-                                <div class="details-adv__info">
-                                    <div class="details-adv__title">
+                                <div>
+                                    <strong>
                                         Гибкое ценообразование
-                                    </div>
-                                    <div class="details-adv__subtitle">
+                                    </strong>
+                                    <span>
                                         Скидки и рассрочка в индивидуальном порядке
-                                    </div>
+                                    </span>
                                 </div>
-                            </div>
+                            </li>
 
-                            <div class="details-adv__item">
-                                <div class="details-adv__icon">
+                            <li class="details-adv__item">
+                                <div>
                                     <img src="img/details-adv/3.svg" alt="">
                                 </div>
-                                <div class="details-adv__info">
-                                    <div class="details-adv__title">
+                                <div>
+                                    <strong>
                                         Доставляем по всему краю
-                                    </div>
-                                    <div class="details-adv__subtitle">
+                                    </strong>
+                                    <span>
                                         Собственный автопарк, две базы с ЖД путями
-                                    </div>
+                                    </span>
                                 </div>
-                            </div>
+                            </li>
 
-                            <div class="details-adv__item">
-                                <div class="details-adv__icon">
+                            <li class="details-adv__item">
+                                <div>
                                     <img src="img/details-adv/4.svg" alt="">
                                 </div>
-                                <div class="details-adv__info">
-                                    <div class="details-adv__title">
+                                <div>
+                                    <strong>
                                         Предоставляем кредит до 300 000 руб.
-                                    </div>
-                                    <div class="details-adv__subtitle">
+                                    </strong>
+                                    <span>
                                         При наличии паспорта без залога и поручителей ПОА «Почта банк»
-                                    </div>
+                                    </span>
                                 </div>
-                            </div>
+                            </li>
                         </ul>
                     </div>
 
@@ -590,8 +596,10 @@
                         </div>
                         <div class="dev">
                             <span>Разработка сайта — </span>
-                            <img src="img/logo-forest-1.svg" alt="" class="dev__logo">
-                            <img src="img/logo-forest-2.svg" alt="" class="dev__logo">
+                            <a href="https://forest-web.ru/">
+                                <img src="img/logo-forest-1.svg" alt="" class="dev__logo">
+                                <img src="img/logo-forest-2.svg" alt="" class="dev__logo">
+                            </a>
                         </div>
                     </div>
                 </footer>
@@ -600,15 +608,13 @@
 
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
-        <!-- <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
         <script src="js/map.js"></script>
-        <!-- <script src="js/jquery.nicescroll.min.js"></script> -->
-        <!-- <script src="js/jquery.mcustomscrollbar.concat.min.js"></script> -->
-        <!-- <script src="js/jquery.nice-select.min.js"></script> -->
+        <script src="js/jquery.nice-select.min.js"></script>
         <script src="js/slick.min.js"></script>
-        <!-- <script src="js/jquery.sticky.js"></script> -->
-        <!-- <script src="js/sticky.min.js"></script> -->
-        <!-- <script src="js/cleave.min.js"></script> -->
+        <script src="js/jquery.fancybox.js"></script>
+        <script src="js/sticky.min.js"></script>
+        <script src="js/cleave.min.js"></script>
         <script src="js/script.js?v=1.0.2"></script>
     </body>
 </html>

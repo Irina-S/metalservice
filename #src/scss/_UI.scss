@@ -35,11 +35,7 @@
     font-size: 30px;
     line-height: 160%;
     font-feature-settings: 'pnum' on, 'lnum' on;
-    color: #141622;
-    margin-top: 33px;
-    margin-bottom: 38px;
-    // width: 100%;
-    padding-left: 50px;
+    color: #141622;  
     text-align: left;
 }
 
@@ -47,15 +43,20 @@
     width:calc(100% - 100px);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 38px;
+    margin-top: 33px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
 
 .btn{
     display:inline-block;
     // padding: 17.5px 40px;
-    @include adaptive-value('padding-top', 17, 10, 3);
-    @include adaptive-value('padding-bottom', 17, 10, 3);
-    @include adaptive-value('padding-left', 55, 25, 3);
-    @include adaptive-value('padding-right', 55, 25, 3);
+    @include adaptive-value('padding-top', 17, 15, 3);
+    @include adaptive-value('padding-bottom', 17, 15, 3);
+    @include adaptive-value('padding-left', 55, 35, 3);
+    @include adaptive-value('padding-right', 55, 35, 3);
     font-family: Akrobat;
     font-style: normal;
     font-weight: 900;
@@ -161,6 +162,15 @@
             right: -30px;
         }
     }
+}
+
+::placeholder{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 112%;
+    color: #686B80;
 }
 
 

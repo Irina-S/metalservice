@@ -1,4 +1,9 @@
 $(document).ready(function(){
+    // FANCBOX
+    // try{
+      $('[data-fancybox]').fancybox({});
+    // } catch(e){}
+
     // MAIN SLIDER
     $('#main-slider').slick({
         arrows:false,
@@ -7,8 +12,8 @@ $(document).ready(function(){
         autoplaySpeed:3000
     });
 
-    // ITEM SLIDER
-    $('#item-slider').slick({
+    // ITEM SLIDER MINI
+    $('.item-slider-mini').slick({
       slidesToShow:4,
       slidesPerRow:1,
       slidesToScroll:1,
@@ -17,9 +22,46 @@ $(document).ready(function(){
       prevArrow:'<button class="slick-prev slick-arrow" type="button" style=""><img src="img/font-icons/up-arrow-blue.svg" alt=""></button>',
       dots:false,
       autoplay:false,
-      vertical:true
+      vertical:true,
+      asNavFor:'.item-slider',
+      focusOnSelect:true
     });
 
+    // ITEM SLIDER
+    $('.item-slider').slick({
+      slidesToShow:1,
+      slidesPerRow:1,
+      slidesToScroll:1,
+      arrows:false,
+      dots:false,
+      autoplay:false,
+      vertical:true,
+      asNavFor:'.item-slider-mini'
+    });
+
+    // ITEM SLIDER
+    $('.fast-item-slider').slick({
+      slidesToShow:1,
+      slidesToScroll:1,
+      arrows:false,
+      dots:false,
+      autoplay:false
+    });
+
+    // ITEM SLIDER MINI
+    // $('.item-slider-mini_hr').slick({
+    //   slidesToShow:3,
+    //   slidesToScroll:1,
+    //   arrows:true,
+    //   nextArrow:'<button class="slick-next slick-arrow" type="button" style=""><img src="img/font-icons/down-arrow-blue.svg" alt=""></button>',
+    //   prevArrow:'<button class="slick-prev slick-arrow" type="button" style=""><img src="img/font-icons/up-arrow-blue.svg" alt=""></button>',
+    //   dots:false,
+    //   autoplay:false,
+    //   asNavFor:'.item-slider_hr',
+    //   focusOnSelect:true
+    // });
+
+    // CATALOG SLIDER
     $('.catalog-slider').slick({
       slidesToShow:5,
       slidesToScroll:1,
@@ -67,7 +109,7 @@ $(document).ready(function(){
       $(`${contentId}`).addClass('active');
     })
 
-    // ОТКРЫТИЕ И ЗАКРЫТИЕ МЕНЮ, КАТАЛОГА
+  // ОТКРЫТИЕ И ЗАКРЫТИЕ МЕНЮ, КАТАЛОГА
   const mobileCatalog = $('.aside');
   const mobileMenu = $('.main-nav');
 
