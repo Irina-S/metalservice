@@ -4,8 +4,9 @@
   }
   
   .order-header{
-    height: 110px;
-    background: #111112;
+    height: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
     
   }
   
@@ -25,17 +26,17 @@
   }
   
   .order-header .logo img{
-    width: 113px;
+    width: 61px;
   }
   
   .backward-link{
-    font-family: Raleway;
+    font-family: Akrobat;
     font-style: normal;
-    font-weight: bold;
+    font-weight: 800;
     font-size: 18px;
-    line-height: 167%;
+    line-height: 111%;
     font-feature-settings: 'pnum' on, 'lnum' on;
-    color: #C7AE96;
+    color: #151E2B;
     text-decoration: none;
     margin-left: 110px;
     margin-right:auto;
@@ -80,14 +81,12 @@
   }
   
   .step-title{
-    font-family: Bebas Neue;
+    font-family: Akrobat;
     font-style: normal;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 1;
-    letter-spacing: 0.1em;
-    font-feature-settings: 'pnum' on, 'lnum' on;
-    color: #FFFFFF;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 160%;
+    color: #141622;
     width: 100%;
     margin-top: 7px;
   }
@@ -172,9 +171,9 @@
     transition: all .3s;
   }
   
-  .field-group input.not-empty{
-    background-color: #111112;
-  }
+  // .field-group input.not-empty{
+  //   background-color: #111112;
+  // }
   
   .field-group input:hover{
     background: #111112;
@@ -199,14 +198,14 @@
     transition: all .3s;
   }
   
-  .field-group input[type=text]:focus+label.placeholder,
-  .field-group textarea:focus+label.placeholder,
-  .field-group input[type=text].not-empty+label.placeholder,
-  .field-group textarea.not-empty+label.placeholder{
-    background-color: #111112;
-    font-size: 12px;
-    transform: translate(27px, -13px);
-  }
+  // .field-group input[type=text]:focus+label.placeholder,
+  // .field-group textarea:focus+label.placeholder,
+  // .field-group input[type=text].not-empty+label.placeholder,
+  // .field-group textarea.not-empty+label.placeholder{
+  //   background-color: #111112;
+  //   font-size: 12px;
+  //   transform: translate(27px, -13px);
+  // }
   
   .field-group input[type=text].has-error {
     background: #251A1A;
