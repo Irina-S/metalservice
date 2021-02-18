@@ -105,7 +105,8 @@ function css_libs(){
         'node_modules/normalize.css/normalize.css',
         'node_modules/bootstrap/dist/css/bootstrap-grid.css', 
         'node_modules/fancybox/dist/css/jquery.fancybox.css',
-        'node_modules/slick-carousel/slick/slick.css'
+        'node_modules/slick-carousel/slick/slick.css',
+        'node_modules/jquery-nice-select/css/nice-select.css'
         // 'node_modules/jquery-nice-select/css/nice-select.css'
         // 'node_modules/animate.css/animate.css'
         // 'node_modules/wow.js/css/libs/animate.css'

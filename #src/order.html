@@ -5,7 +5,7 @@
     <meta name="viewport"
             content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>О компании - МС</title>
+    <title>Оформление заказа - МС</title>
 
     <link rel="shortcut icon" href="img/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/normalize.css">
@@ -35,10 +35,12 @@
         
                 <h1 class="page-title order__title">Оформление заказа</h1>
 
-                <a href="tel:+7 (3022) 28-00-00" class="phone-block">
-                  <i class="icon-phone"></i>
-                  <span>+7 (3022) 28-00-00</span>
-                </a>
+                <div class="phone-block">
+                    <a href="#" class="phone">
+                        <i class="icon-phone"></i>
+                        <span>+7 (3022) 28-00-00</span>
+                    </a>
+                </div>
         
               </div>
             </div>
@@ -54,25 +56,25 @@
                 <form method="post" action="" id="shopOrderForm" class="shopOrderForm">
                   <ol class="order-steps">
         
-                    <li class="order-step success" id="order-step-1">
+                    <li class="order-step" id="order-step-1">
                       <h4 class="step-title">Контактные данные</h4>
         
                       <div class="field-group col-6">
+                        <label for="name">Введите имя <sup>*</sup></label>
                         <input class="name-field" type="text" name="fullname" id="name">
-                        <label for="name" class="placeholder">Введите имя <sup>*</sup></label>
                         <span class="error-field">Это поле обязательное</span>
                       </div>
         
         
                       <div class="field-group col-6">
-                        <input class="phone-field" type="text" name="phone" id="phoneOF">
-                        <label for="phoneOF" class="placeholder">Введите телефон <sup>*</sup></label>
+                        <label for="phoneOF">Введите телефон <sup>*</sup></label>
+                        <input class="phone-field" type="text" name="phone" id="phoneOF" placeholder="+7 (___) ___ - __ - __">
                         <span class="error-field">Неверный формат номера</span>
                       </div>
         
                     </li>
         
-                    <li class="order-step success" id="order-step-2"> -->
+                    <li class="order-step" id="order-step-2">
                       <div class="step-title-block">
                         <h4 class="step-title">Где и как вы хотите получить заказ?</h4>
                         <span class="error-field" style="display: none;">Заполните адрес доставки</span>
@@ -95,46 +97,109 @@
                       </div>
         
                       <div class="delivery-tab radio-tab">
-                        <!-- <div class="field-group"> -->
+
+                          <div class="field-group col-12">
+                            <label>Район доставки <sup>*</sup></label>
+                            <select class="required-group area-select" name="area" id="area">
+                              <option value="Выберите район">Выберите район</option>
+                              <option value="Район 1">Район 1</option>
+                              <option value="Район 1">Район 1</option>
+                              <option value="Район 1">Район 1</option>
+                            </select>
+                          </div>
+
                           <label>Введите адрес доставки <sup>*</sup></label>
                           <div class="field-group col-12">
-                            <input class="required-group" type="text" id="street"name="street">
-                            <label class="placeholder">Улица</label>
+                            <label>Улица</label>
+                            <input class="required-group" type="text" id="street" name="street">
                           </div>
                           <div class="field-group col-3">
+                            <label>Дом</label>
                             <input class="required-group" type="text" id="house" name="house">
-                            <label class="placeholder">Дом</label>
                           </div>
                           <div class="field-group col-3">
+                            <label>Квартира</label>
                             <input class="required-group" type="text" id="flat" name="flat">
-                            <label class="placeholder">Квартира</label>
                           </div>
                           <div class="field-group col-3">
+                            <label>Подъезд</label>
                             <input class="required-group" type="text" id="entrance" name="entrance">
-                            <label class="placeholder">Подъезд</label>
                           </div>
                           <div class="field-group col-3">
+                            <label>Этаж</label>
                             <input class="required-group" type="text" id="floor" name="floor">
-                            <label class="placeholder">Этаж</label>
                           </div>
                           
                           <input class="doorphone" type="checkbox" id="doorphone" value="да" name="doorphone"><label for="doorphone">Домофон работает</label>
         
                           <div class="field-group col-12">
+                            <label>Комментарий</label>
                             <textarea name="comment" id="" cols="30" rows="10"></textarea>
-                            <label class="placeholder">Комментарий</label>
                           </div>
+
+                          <div class="carrying">
+                            <label>Выберите машину для доставки <sup>*</sup></label>
+
+                            <div class="carrying-group">
+                              <div class="field-group col-4 radio-group radio-group--carrying">
+                                <input type="radio" id="5t" class="required-carrying" name="carrying" value="5т">
+                                <label for="5t">
+                                  <span>Машина 5 тонн</span>
+                                  <span>35 руб/км</span>
+                                  <img src="img/truck-5t.svg" alt="">
+                                </label>
+                              </div>
+                
+                              <div class="field-group col-4 radio-group radio-group--carrying">
+                                <input type="radio" id="20t" class="required-carrying" name="carrying" value="20т">
+                                <label for="20t">
+                                  <span>Машина 20 тонн</span>
+                                  <span>50 руб/км</span>
+                                  <img src="img/truck-5t.svg" alt="">
+                                </label>
+                              </div>
+                            </div>
                           
-                        <!-- </div> -->
+                            
+                          </div>
+
+                          
                       </div>
         
                       <div class="bymslf-tab radio-tab">
-                        <!-- <div class=""> -->
-                          <!-- <div class="map"> -->
-                            <div id="map"></div>
-                          <!-- </div> -->
-                        <!-- </div> -->
+                            <div id="map-1"></div>
+
+                            <div class="field-group col-12">
+                              <label>Выберите адрес точки самовывоза <sup>*</sup></label>
+                              <select class="required-group pick-point-select" name="area" id="area">
+                                <option value="г. Чита, Объездное шоссе, 24а, ст1">г. Чита, Объездное шоссе, 24а, ст1</option>
+                                <option value="г. Чита, Объездное шоссе, 24а, ст1">г. Чита, Объездное шоссе, 24а, ст1</option>
+                                <option value="г. Чита, Объездное шоссе, 24а, ст1">г. Чита, Объездное шоссе, 24а, ст1</option>
+                                <option value="г. Чита, Объездное шоссе, 24а, ст1">г. Чита, Объездное шоссе, 24а, ст1</option>
+                              </select>
+                            </div>
+                            
+                            <ul class="contacts-block order-contacts-block">
+
+                              <li class="contacts-block__item">
+                                  <div class="contact__title">Контактный телефон:</div>
+                                  <div class="contact__value">+7 (3022) 28-00-00</div>
+                              </li>
+
+                              <li class="contacts-block__item">
+                                  <div class="contact__title">Контактное лицо</div>
+                                  <div class="contact__value">Лоскутников Максим Геннадьевич</div>
+                              </li>
+
+                              <li class="contacts-block__item">
+                                  <div class="contact__title">Электронная почта</div>
+                                  <div class="contact__value">metallservis1@yandex.ru</div>
+                              </li>
+                            </ul>
+
                       </div>
+
+                      
         
                     </li>
         
@@ -183,81 +248,56 @@
               </main>
         
               <aside class="order-summary__outer">
-                <div id="sticky-wrapper">
                   <div class="order-summary" data-shopcart="3">
                     <header class="order-summary__header">
                       <div class="order-summary__title">Ваш заказ</div>
-                      <!-- <span class="order-summary__summary-count">1 ед.</span> -->
                     </header>
                     <ul class="order-summary__list">
         
                       <li class="order-summary__item order-product-item">
-                        <div class="order-product-item__top-line">
-                          <span class="order-product-item__title">Стейк из говяжьей вырезки</span>
-                          <span class="order-product-item__price">179 руб.</span>
-                          <div class="order-product-item__del-btn">
-                            <img src="img/icons/font-icon/trash.svg" alt="">
-                          </div>
-                        </div>
-                        <div class="order-product-item__bottom-line">
-                          <div class="order-product-item__count">
-                            <button class="shk_count_button dec " type="button">-</button><input type="text" name="count[]" value="1" class="shk-count" style="display: inline-block;"><button class="shk_count_button inc" type="button">+</button>
-                          </div>
-                        </div>
+                          <div class="order-product-item__title">Лист холоднокатаный</div>
+                          <div class="order-product-item__count">1 шт.</div>
+                          <div class="order-product-item__price">2 530 руб.</div>
                       </li>
-        
+
                       <li class="order-summary__item order-product-item">
-                        <div class="order-product-item__top-line">
-                          <span class="order-product-item__title">Мраморный ростбиф</span>
-                          <span class="order-product-item__price">179 руб.</span>
-                          <div class="order-product-item__del-btn">
-                            <img src="img/icons/font-icon/trash.svg" alt="">
-                          </div>
-                        </div>
-                        <div class="order-product-item__bottom-line">
-                          <div class="order-product-item__count">
-                            <button class="shk_count_button dec " type="button">-</button><input type="text" name="count[]" value="1" class="shk-count" style="display: inline-block;"><button class="shk_count_button inc" type="button">+</button>
-                          </div>
-                        </div>
+                        <div class="order-product-item__title">Труба электросварная прямошовная</div>
+                        <div class="order-product-item__count">1 шт.</div>
+                        <div class="order-product-item__price">2 530 руб.</div>
                       </li>
-        
+
                       <li class="order-summary__item order-product-item">
-                        <div class="order-product-item__top-line">
-                          <span class="order-product-item__title">Стейк из говяжьей вырезки</span>
-                          <span class="order-product-item__price">179 руб.</span>
-                          <div class="order-product-item__del-btn">
-                            <img src="img/icons/font-icon/trash.svg" alt="">
-                          </div>
-                        </div>
-                        <div class="order-product-item__bottom-line">
-                          <div class="order-product-item__count">
-                            <button class="shk_count_button dec " type="button">-</button><input type="text" name="count[]" value="1" class="shk-count" style="display: inline-block;"><button class="shk_count_button inc" type="button">+</button>
-                          </div>
-                        </div>
+                        <div class="order-product-item__title">Лист холоднокатаный</div>
+                        <div class="order-product-item__count">1 шт.</div>
+                        <div class="order-product-item__price">2 530 руб.</div>
                       </li>
+
+        
                       
                       <li class="order-summary__item">
                         <div class="order-summary__item-title">
-                          <img src="img/icons/font-icon/delivery.svg" alt="">
-                          Доставка
+                          Всего:
                         </div>
-                        <div class="order-summary__item-value text_green">Бесплатно</div>
+                        <div class="order-summary__item-value text_green">22 120 руб.</div>
                       </li>
         
                       <li class="order-summary__item">
                         <div class="order-summary__item-title">
-                          <img src="img/icons/font-icon/promo.svg" alt="">
-                          Промокод
+                          Скидка:
                         </div>
-                        <div class="order-summary__item-value text_underlined"><a href="">У меня есть промокод</a></div>
+                        <div class="order-summary__item-value text_underlined"><a href="">520 руб.</a></div>
                       </li>
                     </ul>
                       
             
                     <footer class="order-summary__footer">
-                      <div class="order-summary__sum-title">Сумма заказа:</div>
-                      <div class="order-summary__sum">319 руб.</div>
+                      <div class="order-summary__sum-title">Итого:</div>
+                      <div class="order-summary__sum">22 120 руб.</div>
                       <button class="btn send-submit-btn" id="cart_btn" disabled="">Оформить заказ</button>
+                      <div class="conf-block">
+                        <input class="confidence" type="checkbox" id="confidence" value="да" name="confidence">
+                        <label for="confidence">Нажимая на кнопку «Оформить заказ», вы соглашаетесь  с <a href="/">политикой конфиденциальности</a></label>
+                      </div>
                     </footer>
                   </div>
         
@@ -279,25 +319,24 @@
                       canBeProcessed2();
                     
                   </script>
-                </div>
                   
-                <script>
-                  document.querySelector('#cart_btn').addEventListener('click', function(){
-                      document.cookie = 'ordermade=1'; 
-                      document.querySelector("#shopOrderForm").submit();
-                  });
-                  
-                    function canBeProcessed2(){
-                      if(document.querySelectorAll('.order-step.success') && document.querySelectorAll('.order-step') && document.querySelectorAll('.order-step.success').length === document.querySelectorAll('.order-step').length){
-                        document.querySelector('.order-summary .send-submit-btn').disabled = false;
-                      } else{
-                        document.querySelector('.order-summary .send-submit-btn').disabled = true;
-                      }
-                    }
+                  <script>
+                    document.querySelector('#cart_btn').addEventListener('click', function(){
+                        document.cookie = 'ordermade=1'; 
+                        document.querySelector("#shopOrderForm").submit();
+                    });
                     
-                    canBeProcessed2();
-                  
-                </script>  
+                      function canBeProcessed2(){
+                        if(document.querySelectorAll('.order-step.success') && document.querySelectorAll('.order-step') && document.querySelectorAll('.order-step.success').length === document.querySelectorAll('.order-step').length){
+                          document.querySelector('.order-summary .send-submit-btn').disabled = false;
+                        } else{
+                          document.querySelector('.order-summary .send-submit-btn').disabled = true;
+                        }
+                      }
+                      
+                      canBeProcessed2();
+                    
+                  </script>  
               </aside>
               
             </div>

@@ -53,11 +53,13 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-.icon-cart:before { content: '\e80c'; } /* '' */
-.icon-home:before { content: '\e80d'; } /* '' */
-.icon-phone:before { content: '\e80f'; } /* '' */
-.icon-refresh:before { content: '\e810'; } /* '' */
-.icon-search:before { content: '\e811'; } /* '' */
+  .icon-cancel:before { content: '\e800'; } /* '' */
+  .icon-tick:before { content: '\e806'; } /* '' */
+  .icon-cart:before { content: '\e80c'; } /* '' */
+  .icon-home:before { content: '\e80d'; } /* '' */
+  .icon-phone:before { content: '\e80f'; } /* '' */
+  .icon-refresh:before { content: '\e810'; } /* '' */
+  .icon-search:before { content: '\e811'; } /* '' */
   
   [class^="icon-"]:before, [class*=" icon-"]:before {
     font-family: "icons";

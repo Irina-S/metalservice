@@ -165,6 +165,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-cancel:before {
+  content: '\e800';
+}
+
+/* '' */
+
+.icon-tick:before {
+  content: '\e806';
+}
+
+/* '' */
+
 .icon-cart:before {
   content: '\e80c';
 }

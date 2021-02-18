@@ -51,41 +51,38 @@ $(document).ready(function(){
       });
 
 
-    myMap1.panes.get('ground').getElement().style.filter = 'grayscale(100%)';
-    // myMap.behaviors.disable('scrollZoom');
-    // myMap.controls.add('zoomControl');
+      myMap1.panes.get('ground').getElement().style.filter = 'grayscale(100%)';
+      // myMap.behaviors.disable('scrollZoom');
+      // myMap.controls.add('zoomControl');
 
-    myMap1.geoObjects.add(point1_1);
-    myMap1.geoObjects.add(point1_2);
-    myMap1.geoObjects.add(point1_3);
-    myMap1.geoObjects.add(point1_4);
+      myMap1.geoObjects.add(point1_1);
+      myMap1.geoObjects.add(point1_2);
+      myMap1.geoObjects.add(point1_3);
+      myMap1.geoObjects.add(point1_4);
 
     // КАРТА 2
 
     // const centerMap2 = [52.03594886466843,113.47665050073238];
 
-      var myMap2 = new ymaps.Map("map-2", {
-          center: centerMap1,
-          controls: [],
-          zoom: 9
-        });
+    var myMap2 = new ymaps.Map("map-2", {
+        center: centerMap1,
+        controls: [],
+        zoom: 9
+      });
 
-        point2_1 =  new ymaps.Placemark([52.04142457205223,113.50766049999996], {
-          balloonContent: ''
-        }, {
-          iconLayout: 'default#image',
-          iconImageHref: 'img/map-pointer-white.svg',
-          iconImageSize: [100, 110],
-          iconImageOffset: [-30, -60]
-        });
+      point2_1 =  new ymaps.Placemark([52.04142457205223,113.50766049999996], {
+        balloonContent: ''
+      }, {
+        iconLayout: 'default#image',
+        iconImageHref: 'img/map-pointer-white.svg',
+        iconImageSize: [100, 110],
+        iconImageOffset: [-30, -60]
+      });
 
-      myMap2.panes.get('ground').getElement().style.filter = 'grayscale(100%)';
-      // myMap2.behaviors.disable('scrollZoom');
-      // myMap2.controls.add('zoomControl');
+    myMap2.panes.get('ground').getElement().style.filter = 'grayscale(100%)';
+    // myMap2.behaviors.disable('scrollZoom');
+    // myMap2.controls.add('zoomControl');
 
-      myMap2.geoObjects.add(point2_1);
-
+    myMap2.geoObjects.add(point2_1);
   }
-
-
 });
