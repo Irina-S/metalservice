@@ -1000,3 +1000,20 @@
     margin-left: 0;
   }
 }
+
+@media (max-width: 380px) {
+  .modal {
+    width: 100%;
+    height: auto;
+  }
+
+  .modal-request {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .modal-success {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

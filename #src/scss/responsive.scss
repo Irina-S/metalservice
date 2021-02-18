@@ -1112,3 +1112,20 @@
     }
 }
 
+@media (max-width:380px){
+    .modal{
+        width: 100%;
+        height: auto;
+        
+
+        &-request{
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        &-success{
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}
