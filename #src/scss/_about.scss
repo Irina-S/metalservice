@@ -27,6 +27,7 @@
     line-height: 175%;
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #141622;
+    margin-top:0;
   }
   
   .info-block__content p:not(:first-child){
@@ -38,7 +39,7 @@
     font-style: normal;
     font-weight: 800;
     font-size: 24px;
-    line-height: 200%;
+    line-height: 170%;
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #252525;
   }
@@ -96,6 +97,8 @@
     position: relative;
     padding: 49px 48px 31px;
     border: 10px solid #F6F7F9;
+    margin-left: 0;
+    margin-right: 0;
   }
   
   .info-block__content blockquote:after{
@@ -179,14 +182,19 @@
   .info-block-nav{
     background-image: url('../img/about-aside-bg.png');
     background-color: #2E4363;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position-x: right;
     border-radius: 20px;
-    padding: 17px 40px;
+    padding: 0;
     margin-bottom: 60px;
   }
   
   .info-block-nav__list{
     list-style: none;
     width: 100%;
+    padding: 0 40px;
+    margin-top: 0;
   }
   
   .info-block-nav__item{
@@ -197,9 +205,9 @@
     line-height: 200%;
     font-feature-settings: 'pnum' on, 'lnum' on;
     color: #FFFFFF;
-    border-bottom: 1px solid #efefef;
-    padding: 22px 0 12px;
-    transition: all .3s;;
+    border-bottom: 1px solid #efefef1e;
+    padding: 20px 0 12px;
+    transition: all .3s;
   }
   
   .info-block-nav__item:hover{
@@ -226,6 +234,7 @@
   
   
   .info-block__content .gallary{
+    padding: 0;
     margin-top: 15px;
     list-style: none;
     display: flex;
@@ -263,7 +272,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #C7AE96;
+    background: #4170B7;
     position: absolute;
     top: 0;
     left: 0;

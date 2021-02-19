@@ -1,8 +1,29 @@
 $(document).ready(function(){
+
+  // ОТСТУП ПОД ШАПКУ
+  function headerPadding() {
+    const headerHeight = $('.header').outerHeight()
+    const wrapper = $('.wrapper')
+    wrapper.css('padding-top', headerHeight+'px');
+  }
+
+  headerPadding();
+
+
+    // ЛИПКИЕ ЭЛЕМЕНТЫ
+    const stickyOrderSummary = new Sticky('.order-summary', {
+      stickyFor:1200,
+      marginTop:180
+    });
+  
+    const stickyAboutNav = new Sticky('.info-block-nav',{
+      stickyFor:1200,
+      marginTop:180, 
+      marginBottom:550
+    });
+
     // FANCBOX
-    // try{
-      $('[data-fancybox]').fancybox({});
-    // } catch(e){}
+    $('[data-fancybox]').fancybox({});
 
     // MAIN SLIDER
     $('#main-slider').slick({
@@ -90,7 +111,6 @@ $(document).ready(function(){
     // ТАБЫ В КАРТОЧКЕ ТОВАРА
     $('.tab').on('click', function(){
       const contentId = $(this).data('contentId');
-      console.log(contentId);
       $('.tab').removeClass('active')
       $('.tab-content').removeClass('active');
       $(this).addClass('active');
@@ -157,6 +177,38 @@ $(document).ready(function(){
   $('.area-select').niceSelect();
 
   $('.pick-point-select').niceSelect();
+
+   // ДОБАВЛЕНИЕ КЛАССОВ НЕ ПУСТОГО ПОЛЯ ДЛЯ ПСЕВДОПЛЭЙСХОЛДЕРОВ
+   $('input[type=text], textarea').on('change', function(){
+      if ($(this).val()!='')
+        $(this).addClass('not-empty')
+      else
+        $(this).removeClass('not-empty');
+    });
+
+    // ПЕРЕНОС ФОКУСА НА INPUT ПРИ КЛИКЕ ПО ПСЕВДОПЛЭЙСХОЛЕРУ
+    $('label.placeholder').on('click', function(){
+      $(this).siblings('input').focus();
+    });
+
+    try{
+      let phoneVal = '';
+      if($('#cbPhone').val() !== ''){
+          phoneVal = $('#cbPhone').val();
+      }
+      var cleave = new Cleave('#cbPhone', {
+        prefix: '+7',
+        delimiters: [" (", ")", " ", "-", "-"],
+        blocks: [2, 3, 0, 3, 2, 2],
+        uppercase: true,
+        noImmediatePrefix: true
+      });
+      
+      if(phoneVal !== ''){
+        $('#cbPhone').val(phoneVal); 
+      }
+  
+    } catch(e){}
 
   // ВАЛИДАЦИЯ
 
@@ -255,7 +307,7 @@ $(document).ready(function(){
   }
 
   function isCarrying(){
-    if ($('input [name="carrying"]:checked').length>0){
+    if ($('input[name="carrying"]:checked').length>0){
       return true;
     }
     else{
@@ -263,26 +315,44 @@ $(document).ready(function(){
     }
   }
 
+  function isPickPoint(){
+    if ($('.pick-point-select').val()==='' || $('.pick-point-select').val()=='Не выбрано')
+      return false;
+    else
+      return true;
+    
+  }
+
   $('#order-step-2 .required-group').change(function () {
     if (!(isAddrValid() && isCarrying())){
         $('#order-step-2').removeClass('success');
-        $('#order-step-2 .error-field').css('display', 'block');
+        $('#order-step-2>.delivery-tab>.error-field').css('display', 'block');
+        
       } else{
         $('#order-step-2').addClass('success');
-        $('#order-step-2 .error-field').css('display', 'none');
+        $('#order-step-2>.delivery-tab>.error-field').css('display', 'none');
       }
   });
 
   $('#order-step-2 .required-carrying').change(function () {
     if (!isCarrying()){
         $('#order-step-2').removeClass('success');
-        // $('#order-step-2 .error-field').css('display', 'block');
+        $('#order-step-2 .carrying .error-field').css('display', 'block');
       } else{
         $('#order-step-2').addClass('success');
-        // $('#order-step-2 .error-field').css('display', 'none');
+        $('#order-step-2 .carrying .error-field').css('display', 'none');
       }
   });
 
+  $('#order-step-2 .pick-point-select').change(function(){
+    if (!isPickPoint()){
+      $('.bymslf-tab .error-field').css('display', 'block');
+    }   
+    else{
+      $('.bymslf-tab .error-field').css('display', 'none');
+      $('#order-step-2').addClass('success');
+    }
+  })
 
   function isStep2Success(){
     const delivType = $('input[name=shk_delivery]:checked').attr('id');
@@ -293,15 +363,22 @@ $(document).ready(function(){
     else if (delivType=='by-myself'){
       $('.delivery-tab').removeClass('checked');
       $('.bymslf-tab').addClass('checked');
-      $('#order-step-2').addClass('success');
-      $('#order-step-2 .error-field').css('display', 'none');
+      if (!isPickPoint()){
+        $('.bymslf-tab .error-field').css('display', 'block');
+      }   
+      else{
+        $('.bymslf-tab .error-field').css('display', 'none');
+        $('#order-step-2').addClass('success');
+      }
     }
+    $('input[name=pay-type]:checked').prop('checked', false);
+
     setPayment();
   };
 
   $('input[name=shk_delivery]').change(function () {
     isStep2Success();
-    isStep4Success();
+    isStep3Success();
   });
 
   isStep2Success();
@@ -311,8 +388,10 @@ $(document).ready(function(){
   function isStep3Success(){
       if($('input[name=pay-type]:checked').length > 0){
           $('#order-step-3').addClass('success');
+          // $('#order-step-3 .error-field').css('display', 'none');
       } else{
           $('#order-step-3').removeClass('success');
+          // $('#order-step-3 .error-field').css('display', 'block');
       }
   }
 
@@ -333,4 +412,10 @@ $(document).ready(function(){
   $('.order-steps input').change(function () {
     canBeProcessed();
   });
+
+  $('.callback-form').on('submit', function(e){
+    $.fancybox.open({
+      src:'#request-success'
+    });
+  })
 })

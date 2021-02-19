@@ -29,6 +29,7 @@
 }
 
 .page-title{
+    margin: 0;
     font-family: Akrobat;
     font-style: normal;
     font-weight: 800;
@@ -115,6 +116,12 @@
     background: #4170B7;
     color: #fff;
     opacity:0.3;
+    
+
+    &:hover{
+        cursor: auto;
+        background:#4170B7;
+    }
 }
 
 .link{

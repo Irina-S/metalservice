@@ -4,11 +4,10 @@ $(document).ready(function(){
 
   function init() {
 
-    // КАРТА 1
-
+    try{
     const centerMap1 = [52.03594886466843,113.47665050073238];
 
-    var myMap1 = new ymaps.Map("map-1", {
+    var map1 = new ymaps.Map("map-1", {
         center: centerMap1,
         controls: [],
         zoom: 12
@@ -51,26 +50,54 @@ $(document).ready(function(){
       });
 
 
-      myMap1.panes.get('ground').getElement().style.filter = 'grayscale(100%)';
+      map1.panes.get('ground').getElement().style.filter = 'grayscale(100%)';
       // myMap.behaviors.disable('scrollZoom');
       // myMap.controls.add('zoomControl');
 
-      myMap1.geoObjects.add(point1_1);
-      myMap1.geoObjects.add(point1_2);
-      myMap1.geoObjects.add(point1_3);
-      myMap1.geoObjects.add(point1_4);
+      map1.geoObjects.add(point1_1);
+      map1.geoObjects.add(point1_2);
+      map1.geoObjects.add(point1_3);
+      map1.geoObjects.add(point1_4);
 
-    // КАРТА 2
+    }catch(e){}
 
-    // const centerMap2 = [52.03594886466843,113.47665050073238];
+    try{
+      const centerMap2 = [52.03594886466843,113.47665050073238];
 
-    var myMap2 = new ymaps.Map("map-2", {
-        center: centerMap1,
+      let map2 = new ymaps.Map("map-2", {
+          center: centerMap2,
+          controls: [],
+          zoom: 9
+        });
+
+        point2_1 =  new ymaps.Placemark([52.04142457205223,113.50766049999996], {
+          balloonContent: ''
+        }, {
+          iconLayout: 'default#image',
+          iconImageHref: 'img/map-pointer-white.svg',
+          iconImageSize: [100, 110],
+          iconImageOffset: [-30, -60]
+        });
+
+      map2.panes.get('ground').getElement().style.filter = 'grayscale(100%)';
+      // map2.behaviors.disable('scrollZoom');
+      // map2.controls.add('zoomControl');
+
+      map2.geoObjects.add(point2_1);
+    }catch(e){}
+
+    try{
+      // КАРТА ДЛЯ СТРАНИЦЫ "КОНТАКТЫ"
+
+      const centerContactMap = [52.03594886466843,113.47665050073238];
+
+      let contactsMap = new ymaps.Map("contacts-map", {
+        center: centerContactMap ,
         controls: [],
         zoom: 9
       });
 
-      point2_1 =  new ymaps.Placemark([52.04142457205223,113.50766049999996], {
+      point3_1 =  new ymaps.Placemark([52.04142457205223,113.50766049999996], {
         balloonContent: ''
       }, {
         iconLayout: 'default#image',
@@ -79,10 +106,11 @@ $(document).ready(function(){
         iconImageOffset: [-30, -60]
       });
 
-    myMap2.panes.get('ground').getElement().style.filter = 'grayscale(100%)';
-    // myMap2.behaviors.disable('scrollZoom');
-    // myMap2.controls.add('zoomControl');
+      contactsMap.panes.get('ground').getElement().style.filter = 'grayscale(100%)';
+      // contactsMap.behaviors.disable('scrollZoom');
+      // contactsMap.controls.add('zoomControl');
 
-    myMap2.geoObjects.add(point2_1);
+      contactsMap.geoObjects.add(point3_1);
+    }catch(e){}   
   }
 });

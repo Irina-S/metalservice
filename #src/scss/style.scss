@@ -78,10 +78,11 @@ overflow-y: hidden;
     padding: 0;
 
     &__item{
+        position: relative;
         display: flex;
         align-items: flex-start;
         margin: 0 30px;
-        padding: 10px 0 15px;
+        padding: 13px 0 13px;
         font-family: 'Akrobat';
         font-style: normal;
         font-weight: bold;
@@ -90,6 +91,28 @@ overflow-y: hidden;
         font-feature-settings: 'pnum' on, 'lnum' on;
         color: #141622;
         border-top: 1px solid #EFEFEF;
+        transition: all .3s;
+
+        &::after{
+            opacity:0;
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 2px;
+            width: 8px;
+            height: 4px;
+            clip-path: polygon(0% 0%, 15% 0%, 50% 70%, 85% 0%, 100% 0%, 50% 100%);
+            transform: rotate(-90deg) translateY(-50%);
+            background: #4170B7;
+            transition: all .3s;
+        }
+
+        &:hover{
+            background: #F6F7F9;
+            &::after{
+                opacity: 1;
+            }
+        }
 
         &:last-child{
             border-bottom: 1px solid #EFEFEF;
@@ -109,13 +132,13 @@ overflow-y: hidden;
 }
 
 .main{
-    min-height: 100%;
+    min-height: 100vh;
     width: calc(100% - 280px);
     margin-left:280px;
 }
 
 .wrapper{
-    min-height: 100%;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -129,6 +152,11 @@ overflow-y: hidden;
 }
 
 .header{
+    background-color: #fff;
+    z-index:10;
+    position: fixed;
+    top: 0;
+    width: 100%;
     &__top{
         display: flex;
         align-items: center;
@@ -2012,6 +2040,7 @@ overflow-y: hidden;
 
 .modal{
     width: 370px;
+    overflow: hidden;
     // border: 1px solid #000;
     display:none;
 
@@ -2023,6 +2052,7 @@ overflow-y: hidden;
     &-success{
         height: 400px;
         background: #4170B7;
+        padding-top: 0;
 
         &__inner{
             display: flex;
@@ -2129,3 +2159,78 @@ overflow-y: hidden;
         margin-bottom: 27px;
     }
 }
+
+.contacts-page{
+    width: calc(100% - 100px);
+    margin: 0 50px;
+    position: relative;
+    margin-bottom: 120px;
+
+    .contacts-block{
+        right: 252px;
+        top: 217px;
+    }
+}
+
+.contacts-map{
+    width: 100%;
+}
+
+#contacts-map{
+    width: 100%;
+    max-height: 800px;
+    height: 800px;
+    overflow: hidden;
+}
+
+.pick-point-list{
+    position: absolute;
+    top: 0;
+    left: 0;
+    top: 92px;
+    left: 130px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 370px;
+    padding: 15px 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 80px rgba(0, 0, 0, 0.1);
+
+    &__item{
+        position: relative;
+        padding: 15px 20px;
+        transition: all .3s;;
+        &:not(:last-child){
+            border-bottom: 1px solid #EFEFEF;
+        }
+
+        &::after{
+            opacity:0;
+            content: "";
+            position: absolute;
+            top: 50%;
+            right: 12px;
+            width: 16px;
+            height: 8px;
+            clip-path: polygon(0% 0%, 15% 0%, 50% 70%, 85% 0%, 100% 0%, 50% 100%);
+            transform: rotate(-90deg) translateY(-50%);
+            background: #4170B7;
+            transition: all .3s;
+        }
+
+        &:hover{
+            background: #F6F7F9; 
+
+            &::after{
+                opacity: 1;
+            }
+        }
+
+    }
+
+    .contact__value{
+        margin-bottom: 10px;
+    }
+}
+

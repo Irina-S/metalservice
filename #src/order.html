@@ -30,11 +30,13 @@
                     <img src="./img/logo.png" alt="Логотип">
                   </a>
                 </div>
-        
-                <a href="#" class="backward-link" ><i class="icon-cart"></i> Вернуться к корзине </a>
-        
-                <h1 class="page-title order__title">Оформление заказа</h1>
 
+                <div class="order-header-center">
+                  <a href="#" class="backward-link" ><i class="icon-cart"></i> Вернуться к корзине </a>
+        
+                  <h1 class="page-title order__title">Оформление заказа</h1>
+                </div>
+               
                 <div class="phone-block">
                     <a href="#" class="phone">
                         <i class="icon-phone"></i>
@@ -57,8 +59,11 @@
                   <ol class="order-steps">
         
                     <li class="order-step" id="order-step-1">
-                      <h4 class="step-title">Контактные данные</h4>
-        
+
+                      <div class="step-title-block">
+                        <h4 class="step-title">Контактные данные</h4>
+                      </div>
+                      
                       <div class="field-group col-6">
                         <label for="name">Введите имя <sup>*</sup></label>
                         <input class="name-field" type="text" name="fullname" id="name">
@@ -77,7 +82,7 @@
                     <li class="order-step" id="order-step-2">
                       <div class="step-title-block">
                         <h4 class="step-title">Где и как вы хотите получить заказ?</h4>
-                        <span class="error-field" style="display: none;">Заполните адрес доставки</span>
+                        <span class="error-field">Это поле обязательное</span>
                       </div>
         
                       <div class="field-group col-6 radio-group radio-group--delivery">
@@ -97,7 +102,7 @@
                       </div>
         
                       <div class="delivery-tab radio-tab">
-
+                          <span class="error-field" style="display: none;">Заполните адрес доставки</span>
                           <div class="field-group col-12">
                             <label>Район доставки <sup>*</sup></label>
                             <select class="required-group area-select" name="area" id="area">
@@ -110,24 +115,24 @@
 
                           <label>Введите адрес доставки <sup>*</sup></label>
                           <div class="field-group col-12">
-                            <label>Улица</label>
                             <input class="required-group" type="text" id="street" name="street">
+                            <label class="placeholder">Улица</label>
                           </div>
                           <div class="field-group col-3">
-                            <label>Дом</label>
                             <input class="required-group" type="text" id="house" name="house">
+                            <label class="placeholder">Дом</label>
                           </div>
                           <div class="field-group col-3">
-                            <label>Квартира</label>
                             <input class="required-group" type="text" id="flat" name="flat">
+                            <label class="placeholder">Квартира</label>
                           </div>
                           <div class="field-group col-3">
-                            <label>Подъезд</label>
                             <input class="required-group" type="text" id="entrance" name="entrance">
+                            <label class="placeholder">Подъезд</label>
                           </div>
                           <div class="field-group col-3">
-                            <label>Этаж</label>
                             <input class="required-group" type="text" id="floor" name="floor">
+                            <label class="placeholder">Этаж</label>
                           </div>
                           
                           <input class="doorphone" type="checkbox" id="doorphone" value="да" name="doorphone"><label for="doorphone">Домофон работает</label>
@@ -138,13 +143,16 @@
                           </div>
 
                           <div class="carrying">
+                          <div class="input-title-block">
                             <label>Выберите машину для доставки <sup>*</sup></label>
-
+                            <span class="error-field">Это поле обязательное</span>
+                          </div>
+                            
                             <div class="carrying-group">
                               <div class="field-group col-4 radio-group radio-group--carrying">
                                 <input type="radio" id="5t" class="required-carrying" name="carrying" value="5т">
                                 <label for="5t">
-                                  <span>Машина 5 тонн</span>
+                                  <span>Машина <br> 5 тонн</span>
                                   <span>35 руб/км</span>
                                   <img src="img/truck-5t.svg" alt="">
                                 </label>
@@ -153,7 +161,7 @@
                               <div class="field-group col-4 radio-group radio-group--carrying">
                                 <input type="radio" id="20t" class="required-carrying" name="carrying" value="20т">
                                 <label for="20t">
-                                  <span>Машина 20 тонн</span>
+                                  <span>Машина <br> 20 тонн</span>
                                   <span>50 руб/км</span>
                                   <img src="img/truck-5t.svg" alt="">
                                 </label>
@@ -170,9 +178,12 @@
                             <div id="map-1"></div>
 
                             <div class="field-group col-12">
-                              <label>Выберите адрес точки самовывоза <sup>*</sup></label>
-                              <select class="required-group pick-point-select" name="area" id="area">
-                                <option value="г. Чита, Объездное шоссе, 24а, ст1">г. Чита, Объездное шоссе, 24а, ст1</option>
+                              <div class="input-title-block">
+                                <label for="pick-point">Выберите адрес точки самовывоза <sup>*</sup></label>
+                                <span class="error-field">Это поле обязательное</span>
+                              </div>
+                              <select class="required-group pick-point-select" name="area" id="pick-point">
+                                <option value="Не выбрано">Не выбрано</option>
                                 <option value="г. Чита, Объездное шоссе, 24а, ст1">г. Чита, Объездное шоссе, 24а, ст1</option>
                                 <option value="г. Чита, Объездное шоссе, 24а, ст1">г. Чита, Объездное шоссе, 24а, ст1</option>
                                 <option value="г. Чита, Объездное шоссе, 24а, ст1">г. Чита, Объездное шоссе, 24а, ст1</option>
@@ -206,7 +217,7 @@
                     <li class="order-step required-radio" id="order-step-3">
                       <div class="step-title-block">
                         <h4 class="step-title">Как вам будет удобнее оплатить заказ?</h4>
-                        <span class="error-field">Выберите способ оплаты</span>
+                        <span class="error-field">Это поле обязательное</span>
                       </div>
         
                       <div class="field-group col-6 radio-group radio-group--pay-1 curr-pay">
@@ -250,7 +261,7 @@
               <aside class="order-summary__outer">
                   <div class="order-summary" data-shopcart="3">
                     <header class="order-summary__header">
-                      <div class="order-summary__title">Ваш заказ</div>
+                      <div class="order-summary__title">Ваш заказ <span>4 товара</span></div>
                     </header>
                     <ul class="order-summary__list">
         
@@ -293,7 +304,7 @@
                     <footer class="order-summary__footer">
                       <div class="order-summary__sum-title">Итого:</div>
                       <div class="order-summary__sum">22 120 руб.</div>
-                      <button class="btn send-submit-btn" id="cart_btn" disabled="">Оформить заказ <img src="img/font-icons/arrow-right.svg" alt=""></button>
+                      <button class="btn btn_blue send-submit-btn" id="cart_btn" disabled="">Оформить заказ <img src="img/font-icons/arrow-right.svg" alt=""></button>
                       <div class="conf-block">
                         <input class="confidence" type="checkbox" id="confidence" value="да" name="confidence">
                         <label for="confidence">Нажимая на кнопку «Оформить заказ», вы соглашаетесь  с <a href="/">политикой конфиденциальности</a></label>
@@ -348,7 +359,6 @@
           <script src="js/map.js"></script>
           <script src="js/jquery.nice-select.min.js"></script>
           <script src="js/slick.min.js"></script>
-          <script src="js/jquery.fancybox.js"></script>
           <script src="js/sticky.min.js"></script>
           <script src="js/cleave.min.js"></script>
           <script src="js/script.js?v=1.0.2"></script>
